@@ -4,7 +4,12 @@ module.exports = {
     './templates/**/*.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Space Grotesk", 'sans-serif'],
+        space: ["Bungee", 'sans-serif'],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

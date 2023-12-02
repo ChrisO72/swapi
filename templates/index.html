@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<div class="fixed inset-0 z-10 bg-gray-500/25 w-screen overflow-y-auto p-4 sm:p-6 md:p-20">
+<div class="fixed inset-0 z-10 bg-gray-900 w-screen overflow-y-auto p-4 sm:p-6 md:p-20">
     <div
-        class="mx-auto p-5 mb-8 max-w-3xl transform rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
-        <h3 class="text-xl font-semibold leading-6 text-gray-900">Star Wars Character Archive</h3>
-        <p class="mt-1 text-gray-500">Embark on a Galactic Quest through the Lives of Iconic Figures like Obi-Wan Kenobi
+        class="mx-auto p-10 mb-8 max-w-3xl transform rounded-xl text-center bg-white/10 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+        <h3 class="text-4xl font-normal text-yellow-400 font-space mb-5">Star Wars Character Archive</h3>
+        <p class="mt-1 text-lg text-gray-200">Browse through Iconic Figures like Obi-Wan Kenobi
             and Mace Windu</p>
     </div>
 
     <div
-        class="mx-auto max-w-3xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+        class="mx-auto max-w-3xl transform divide-gray-400 overflow-hidden rounded-xl bg-white/10 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
         <div class="relative">
             <svg class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20"
                 fill="currentColor" aria-hidden="true">
@@ -21,7 +21,7 @@
             </svg>
             <form id="search" onkeydown="return event.key != 'Enter';">
                 <input
-                    class="h-12 w-full border-0 bg-transparent px-11 text-gray-800 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                    class="h-12 w-full border-0 bg-transparent px-11 text-gray-200 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                     placeholder="Search..." hx-post="/search/" hx-trigger="input changed delay:500ms, search"
                     hx-target="#search-results" hx-indicator=".htmx-indicator"
                     hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' 
@@ -33,7 +33,7 @@
                     end
                     
                     on keyup
-                    call me.setCustomValidity('')" type="search" name="search">
+                    call me.setCustomValidity('')" type="text" name="search">
             </form>
 
 
@@ -44,13 +44,13 @@
                 <g id="SVGRepo_iconCarrier">
                     <path
                         d="M20.0001 12C20.0001 13.3811 19.6425 14.7386 18.9623 15.9405C18.282 17.1424 17.3022 18.1477 16.1182 18.8587C14.9341 19.5696 13.5862 19.9619 12.2056 19.9974C10.825 20.0328 9.45873 19.7103 8.23975 19.0612"
-                        stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+                        stroke="#bdbdbd" stroke-width="2" stroke-linecap="round"></path>
                 </g>
             </svg>
 
         </div>
 
-        <div id="search-results" class="divide-y divide-gray-100">
+        <div id="search-results" class="divide-y divide-gray-900">
         </div>
     </div>
 </div>

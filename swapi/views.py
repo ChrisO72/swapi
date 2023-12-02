@@ -1,6 +1,10 @@
+import requests
+
+from urllib.parse import urlparse, parse_qs
+
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-import requests
+
 
 def index(request):
     return render(request, 'index.html')
@@ -20,6 +24,9 @@ def search(request):
 
         if 'results' in data:
             for result in data['results']:
+                url = result['url']
+                parsed = urlparse(url)
+                result['number'] = parsed.path.strip('/').split('/')[-1]
                 res_items.append(result)
 
     except requests.RequestException as e:
